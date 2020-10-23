@@ -1,6 +1,6 @@
 # Cam Server
 ## Image: gcr.io/parklens/cam-server:v0.1.0
-## Command: `bash -c "/app/run.sh --path=/etc/openvpn"`
+## Command: `bash -c "./run.sh --path=/etc/openvpn"`
 ## Env Vars:
 - GITHUB_TOKEN
 - PARKLENS_API_URL
@@ -18,6 +18,7 @@
 
 # Cam Server Web App
 ## Image: gcr.io/parklens/cam-server-webapp:v0.1.0
+## Command: `bash -c "./run.sh"`
 ## Env Vars:
 - REACT_APP_CAM_SERVER_URLS={"server_alias":"http://[server-url]:[port]"}
 - REACT_APP_CLOUD_URL=https://api.parklens.com/v2
@@ -28,6 +29,7 @@
 
 # Predictor API 
 ## Image: gcr.io/parklens/predictor-api:v0.1.0
+## Command: `bash -c "./run.sh"`
 ## Env Vars: 
 - LOGLEVEL=INFO
 - PORT
@@ -39,6 +41,7 @@
 
 # Predictor Worker CPU
 ## Image: gcr.io/parklens/predictor-worker-cpu:v0.1.0
+## Command: `bash -c "./predictor-service-worker"`
 ## Env Vars:
 - LOGLEVEL=INFO
 - REDIS_HOST
@@ -52,6 +55,7 @@
 
 # Predictor Worker GPU
 ## Image: gcr.io/parklens/predictor-worker-gpu:v0.1.0
+## Command: `bash -c "./predictor-service-worker"`
 ## Env Vars:
 - LOGLEVEL=INFO
 - REDIS_HOST
